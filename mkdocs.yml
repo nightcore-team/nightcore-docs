@@ -1,0 +1,6 @@
+site_name: Nightcore user documentation
+nav:
+  - Кланы:
+    - Общее: common/clans.md
+    - Команды: commands/clans.md
+    - Компоненты: components/clans.md
