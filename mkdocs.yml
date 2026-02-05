@@ -17,7 +17,6 @@ nav:
 
 theme:
   name: material
-  custom_dir: overrides
   logo: assets/images/nightcore-avatar.jpg
   favicon: assets/images/nightcore-avatar.jpg
   features:
