@@ -1,0 +1,156 @@
+/* =========================
+   Nightcore – Cosmic Theme
+   ========================= */
+
+/* Base palette */
+:root {
+    /* Backgrounds */
+    --nc-bg-main: #070B10;
+    --nc-bg-secondary: #0F1120;
+    --nc-bg-elevated: #1B1D30;
+
+    /* Text */
+    --nc-text-primary: #E6E9F2;
+    --nc-text-secondary: #AAB6EE;
+    --nc-text-muted: #96A9DA;
+
+    /* Accents */
+    --nc-accent-blue: #5F7DC5;
+    --nc-accent-soft: #AAB6EE;
+    --nc-accent-violet: #8a6eca;
+    --nc-accent-pink: #FF9ACB;
+}
+
+/* =========================
+   Material variable overrides
+   ========================= */
+
+[data-md-color-scheme="slate"] {
+    --md-default-bg-color: var(--nc-bg-main);
+    --md-default-fg-color: var(--nc-text-primary);
+    --md-default-fg-color--light: var(--nc-text-secondary);
+    --md-default-fg-color--lighter: var(--nc-text-muted);
+
+    --md-primary-fg-color: var(--nc-accent-blue);
+    --md-accent-fg-color: var(--nc-accent-violet);
+
+    --md-code-bg-color: #0B0F1A;
+    --md-code-fg-color: #C7D2FF;
+
+    --md-admonition-bg-color: rgba(170, 182, 238, 0.08);
+}
+
+/* =========================
+   Page background (nebula feel)
+   ========================= */
+
+.md-container {
+    background: #1d273f;
+}
+
+/* =========================
+   Navigation & header
+   ========================= */
+
+.md-header {
+    background: rgba(7, 11, 16, 0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(170, 182, 238, 0.12);
+}
+
+.md-tabs {
+    background: transparent;
+}
+
+.md-tabs__link--active {
+    color: var(--nc-accent-violet);
+}
+
+.md-nav__title {
+    background: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.md-nav__link {
+    background: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* =========================
+   Links
+   ========================= */
+
+.md-content a {
+    color: var(--nc-accent-blue);
+    text-decoration: none;
+}
+
+.md-content a:hover {
+    color: var(--nc-accent-pink);
+    text-shadow: 0 0 6px rgba(191, 166, 255, 0.4);
+}
+
+/* =========================
+   Code blocks
+   ========================= */
+
+.md-typeset pre {
+    background: linear-gradient(180deg,
+            #0B0F1A,
+            #070B10);
+    border: 1px solid rgba(170, 182, 238, 0.12);
+    border-radius: 10px;
+}
+
+/* Inline code */
+.md-typeset code {
+    background: rgba(95, 125, 197, 0.12);
+    border-radius: 6px;
+    padding: 0.15em 0.35em;
+}
+
+/* =========================
+   Admonitions
+   ========================= */
+
+.md-typeset .admonition,
+.md-typeset details {
+    border: 1px solid rgba(170, 182, 238, 0.15);
+    border-radius: 12px;
+    background:
+        linear-gradient(135deg,
+            rgba(95, 125, 197, 0.08),
+            rgba(191, 166, 255, 0.05));
+}
+
+/* =========================
+   Tables
+   ========================= */
+
+.md-typeset table {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.md-typeset th {
+    background: #1B1D30;
+}
+
+.md-typeset td {
+    background: #0F1120;
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+.md-footer {
+    background: #070B10;
+    border-top: 1px solid rgba(170, 182, 238, 0.12);
+}
