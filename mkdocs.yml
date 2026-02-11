@@ -11,6 +11,10 @@ nav:
         - Компоненты: components/clans.md
       - Конфигурация:
         - Команды: commands/config.md
+      - Модерация:
+        - Общее: common/moderation.md
+        - Команды: commands/moderation.md
+        - Компоненты: components/moderation.md
 
 theme:
   name: material
