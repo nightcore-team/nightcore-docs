@@ -9,6 +9,9 @@ nav:
         - Общее: common/clans.md
         - Команды: commands/clans.md
         - Компоненты: components/clans.md
+      - Конфигурация:
+        - Команды: commands/config.md
+
 theme:
   name: material
   logo: assets/images/nightcore-avatar.jpg
