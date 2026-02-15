@@ -1903,6 +1903,14 @@
 <li><code>option</code> - действие (назначить / снять)</li>
 </ul>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Информация в логе</p>
+<ul>
+<li><code>Клан</code> - название клана, в котором сняли заместителя</li>
+<li><code>Инциатор</code> - пользователь, совершивший действие (Упоминание + id)</li>
+<li><code>Снятие заместителя</code> - пользователь, снятый с должности заместителя (Упоминание)</li>
+</ul>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Возможные ошибки</p>
 <ul>
@@ -1930,6 +1938,13 @@
 <li><code>name</code> - название клана, ограничение в 100 символов</li>
 <li><code>leader</code> - будущий лидер (упоминание или id)</li>
 <li><code>color</code> - цвет в HEX формате, пример - #FF0000 для красного</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Информация в логе</p>
+<ul>
+<li><code>Клан</code> - название клана, который был создан</li>
+<li><code>Инциатор</code> - пользователь, создавший клан (Упоминание + id)</li>
 </ul>
 </div>
 <div class="admonition warning">
@@ -1961,6 +1976,13 @@
 Как значение передается id клана</li>
 </ul>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Информация в логе</p>
+<ul>
+<li><code>Клан</code> - название клана, который был удален</li>
+<li><code>Инциатор</code> - пользователь, совершивший действие (Упоминание + id)</li>
+</ul>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Возможные ошибки</p>
 <ul>
@@ -1982,6 +2004,14 @@
 <h3 id="_14">Параметры</h3>
 <ul>
 <li><code>improvement</code> - улучшение</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Информация в логе</p>
+<ul>
+<li><code>Клан</code> - название клана, в котором было куплено улучшение</li>
+<li><code>Инциатор</code> - пользователь, совершивший действие (Упоминание + id)</li>
+<li><code>Покупка улучшения</code> - название улучшения</li>
 </ul>
 </div>
 <div class="admonition warning">
@@ -2010,6 +2040,14 @@
 <li><code>user</code> - пользователь, которого вы хотите пригласить (упоминание или id)</li>
 </ul>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Информация в логе</p>
+<ul>
+<li><code>Клан</code> - название клана, в котором было совершено действие</li>
+<li><code>Инциатор</code> - пользователь, совершивший действие (Упоминание + id)</li>
+<li><code>Приглашение участника</code> - принятый в клан пользователь (Упоминание)</li>
+</ul>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Возможные ошибки</p>
 <ul>
@@ -2032,6 +2070,14 @@
 <h3 id="_20">Параметры</h3>
 <ul>
 <li><code>user</code> - пользователь, которого вы хотите кикнуть (упоминание или id)</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Информация в логе</p>
+<ul>
+<li><code>Клан</code> - название клана, в котором было совершено действие</li>
+<li><code>Инциатор</code> - пользователь, совершивший действие (Упоминание + id)</li>
+<li><code>Исключение участника</code> - кикнутый из клана пользователь (Упоминание)</li>
 </ul>
 </div>
 <div class="admonition warning">
@@ -2065,6 +2111,19 @@
 <li><code>new_role</code> - новая роль (упоминание или id)<br />
 ограничения - не может быть с правами администратора, быть выше чем высшая роль бота</li>
 <li><code>new_name</code> - новое название, ограничение в 100 символов</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Информация в логе</p>
+<ul>
+<li><code>Клан</code> - название клана, в котором было совершено действие</li>
+<li><code>Инциатор</code> - пользователь, совершивший действие (Упоминание + id)</li>
+<li><code>Изменение лидера</code> - лидер до смены -&gt; после смены (Упоминание)<br />
+только при введенном параметре <code>new_leader</code></li>
+<li><code>Изменение роли</code> - роль до смены -&gt; после смены (Упоминание)<br />
+только при введенном параметре <code>new_role</code></li>
+<li><code>Изменение названия</code> - название до смены -&gt; после смены<br />
+только при введенном параметре <code>new_name</code></li>
 </ul>
 </div>
 <div class="admonition warning">
