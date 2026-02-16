@@ -1,1 +1,1 @@
-# nightcore-docs
+# nightcore-docs.github.io
