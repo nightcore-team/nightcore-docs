@@ -16,6 +16,23 @@ nav:
         - Общее: common/moderation.md
         - Команды: commands/moderation.md
         - Компоненты: components/moderation.md
+      - FAQ:
+        - Команды: commands/faq.md
+      - Форум:
+        - Общее: common/forum.md
+      - Мета:
+        - Команды: commands/meta.md
+      - Тикеты:
+        - Общее: common/tickets.md
+        - Команды: commands/tickets.md
+        - Компоненты: components/tickets.md
+      - Предложения:
+        - Общее: common/proposals.md
+        - Компоненты: components/proposals.md
+      - Запрос ролей:
+        - Общее: common/role_requests.md
+        - Команды: commands/role_requests.md
+        - Компоненты: components/role_requests.md
 
 theme:
   name: material
