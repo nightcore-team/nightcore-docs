@@ -16,6 +16,9 @@ nav:
         - Общее: common/moderation.md
         - Команды: commands/moderation.md
         - Компоненты: components/moderation.md
+      - Экономика:
+        - Общее: common/economy.md
+        - Команды: commands/economy.md
       - FAQ:
         - Команды: commands/faq.md
       - Форум:
