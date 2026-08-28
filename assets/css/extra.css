@@ -1,24 +1,53 @@
+/* ============================================================
+   Nightcore Docs — единый стиль (источник: STYLE.md)
+   Тёмная тема, строгий минимализм, без градиентов/blur
+   ============================================================ */
+
 /* =========================
-   Nightcore – Cosmic Theme
+   2. Фирменные токены
    ========================= */
 
-/* Base palette */
 :root {
-    /* Backgrounds */
-    --nc-bg-main: #070B10;
-    --nc-bg-secondary: #0F1120;
-    --nc-bg-elevated: #1B1D30;
+    /* Фоны */
+    --bg: oklch(8% 0 0);
+    --bg2: oklch(12% 0 0);
+    --bg3: oklch(16% 0 0);
 
-    /* Text */
-    --nc-text-primary: #E6E9F2;
-    --nc-text-secondary: #AAB6EE;
-    --nc-text-muted: #96A9DA;
+    /* Текст */
+    --fg: oklch(97% .02 95);
+    --fg2: oklch(70% 0 0);
+    --fg3: oklch(44% 0 0);
 
-    /* Accents */
-    --nc-accent-blue: #5F7DC5;
-    --nc-accent-soft: #AAB6EE;
-    --nc-accent-violet: #8a6eca;
-    --nc-accent-pink: #FF9ACB;
+    /* Границы */
+    --border: oklch(100% 0 0 / .10);
+    --border2: oklch(100% 0 0 / .16);
+
+    /* Акценты */
+    --accent: oklch(86.07% 0.0001 271.152);
+    --accent2: oklch(74.021% 0.00374 248.389);
+
+    /* Сигнальные */
+    --green: oklch(68.902% 0.23444 142.511);
+    --red: oklch(63.7% .237 25.331);
+    --blue: oklch(83.902% 0.0001 271.152);
+    --orange: oklch(75% .18 55);
+
+    /* Error-триада */
+    --error-bg: #2a1215;
+    --error-border: #5c2b2e;
+    --error-text: #ff8a80;
+
+    /* Подсветка изменённых полей */
+    --changed-old-border: var(--red);
+    --changed-old-bg: oklch(63.7% .237 25.331 / .07);
+    --changed-new-border: var(--green);
+    --changed-new-bg: oklch(68.902% 0.23444 142.511 / .07);
+
+    /* Размеры и шрифт */
+    --radius: .625rem;
+    --header-height: 58px;
+    --font: 'Rubik', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
 }
 
 /* =========================
@@ -26,131 +55,524 @@
    ========================= */
 
 [data-md-color-scheme="slate"] {
-    --md-default-bg-color: var(--nc-bg-main);
-    --md-default-fg-color: var(--nc-text-primary);
-    --md-default-fg-color--light: var(--nc-text-secondary);
-    --md-default-fg-color--lighter: var(--nc-text-muted);
+    --md-default-bg-color: var(--bg);
+    --md-default-fg-color: var(--fg);
+    --md-default-fg-color--light: var(--fg2);
+    --md-default-fg-color--lighter: var(--fg3);
 
-    --md-primary-fg-color: var(--nc-accent-blue);
-    --md-accent-fg-color: var(--nc-accent-violet);
+    --md-typeset-color: var(--fg);
+    --md-typeset-a-color: var(--accent);
 
-    --md-code-bg-color: #0B0F1A;
-    --md-code-fg-color: #C7D2FF;
+    --md-primary-fg-color: var(--accent);
+    --md-primary-fg-color--light: var(--accent2);
+    --md-primary-fg-color--dark: var(--accent2);
+    --md-primary-bg-color: var(--fg);
 
-    --md-admonition-bg-color: rgba(170, 182, 238, 0.08);
+    --md-accent-fg-color: var(--accent2);
+
+    --md-code-bg-color: var(--bg2);
+    --md-code-fg-color: var(--fg);
+
+    --md-admonition-bg-color: var(--bg2);
+
+    --md-text-font: var(--font);
+    --md-code-font: var(--font-mono);
+
+    --md-sys-shape-corner-extra-small: var(--radius);
+    --md-sys-shape-corner-small: var(--radius);
+    --md-sys-shape-corner-medium: var(--radius);
+    --md-sys-shape-corner-large: var(--radius);
+    --md-sys-shape-corner-extra-large: var(--radius);
 }
 
 /* =========================
-   Page background (nebula feel)
+   Базовые шрифты и переходы
    ========================= */
 
-.md-container {
-    background: #1d273f;
+body {
+    font-family: var(--font);
+    font-size: 0.875rem;
+}
+
+a,
+.md-nav__link,
+.md-tabs__link,
+.md-typeset .md-button,
+.md-typeset .admonition-title,
+.md-typeset details > summary {
+    transition: all 0.15s ease;
+}
+
+::selection {
+    background: var(--accent);
+    color: var(--bg);
 }
 
 /* =========================
-   Navigation & header
+   3. Типографика
+   ========================= */
+
+.md-typeset h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--fg);
+    letter-spacing: 0.02em;
+}
+
+.md-typeset h2 {
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--fg);
+}
+
+.md-typeset h3 {
+    font-size: 0.875rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--fg2);
+}
+
+.md-typeset h4 {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--fg2);
+}
+
+/* =========================
+   8. Header / onav и навигация
    ========================= */
 
 .md-header {
-    background: rgba(7, 11, 16, 0.85);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(170, 182, 238, 0.12);
+    background: oklch(8% 0 0 / .95);
+    border-bottom: 1px solid var(--border);
+    box-shadow: none;
+    min-height: var(--header-height);
 }
+
+.md-header[data-md-component="header"][data-md-state="shadow"],
+.md-tabs[data-md-state="shadow"] {
+    box-shadow: none;
+}
+
+.md-header__inner {
+    min-height: var(--header-height);
+}
+
+.md-header__title,
+.md-header__button,
+.md-header__option {
+    color: var(--fg);
+}
+
+.md-header__button:hover {
+    color: var(--fg);
+}
+
+/* Скрыть дублирующий заголовок сайта в drawer-сайдбаре */
+.md-nav__title[for="__drawer"] {
+    display: none;
+}
+
+/* Логотип в хедере — крупнее и компактнее */
+.md-header__button.md-logo {
+    margin: 0;
+    padding: 0 0.5rem;
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+    height: 2.6rem;
+    width: auto;
+}
+
+.md-header__inner {
+    display: flex;
+    align-items: center;
+    min-height: var(--header-height);
+}
+
+/* Tabs */
 
 .md-tabs {
-    background: transparent;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    box-shadow: none;
 }
 
-.md-tabs__link--active {
-    color: var(--nc-accent-violet);
+.md-tabs__link {
+    color: var(--fg2);
+    font-size: 0.875rem;
 }
+
+.md-tabs__link:focus,
+.md-tabs__link:hover {
+    color: var(--fg);
+    background: var(--bg3);
+    border-radius: var(--radius);
+}
+
+.md-tabs__link--active,
+.md-tabs__link:focus,
+.md-tabs__link:hover {
+    color: var(--accent);
+}
+
+/* Sidebar */
 
 .md-nav__title {
-    background: none !important;
-    background-color: transparent !important;
-    background-image: none !important;
-    border: none !important;
-    box-shadow: none !important;
+    color: var(--fg);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .md-nav__link {
-    background: none !important;
-    background-color: transparent !important;
-    background-image: none !important;
-    border: none !important;
-    box-shadow: none !important;
+    color: var(--fg2);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: var(--radius);
+}
+
+.md-nav__link:focus,
+.md-nav__link:hover {
+    color: var(--fg);
+    background: var(--bg3);
+}
+
+.md-nav__item--active > .md-nav__link,
+.md-nav__link--active {
+    color: var(--accent);
+    background: var(--bg3);
+}
+
+/* Вложенные пункты (подсистемы) */
+.md-nav__item .md-nav__item .md-nav__link {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    color: var(--fg3);
+}
+
+.md-nav__item .md-nav__item .md-nav__link--active {
+    color: var(--accent2);
+    font-weight: 500;
+}
+
+/* TOC */
+.md-nav--secondary .md-nav__link,
+.md-nav--secondary .md-nav__item {
+    font-size: 0.8125rem;
+}
+
+.md-nav--secondary .md-nav__link--active {
+    color: var(--accent2);
 }
 
 /* =========================
-   Links
+   Ссылки
    ========================= */
 
 .md-content a {
-    color: var(--nc-accent-blue);
-    text-decoration: none;
+    color: var(--accent);
 }
 
 .md-content a:hover {
-    color: var(--nc-accent-pink);
-    text-shadow: 0 0 6px rgba(191, 166, 255, 0.4);
+    color: var(--accent2);
+}
+
+.md-content a:focus-visible {
+    outline: 1px solid var(--accent2);
+    outline-offset: 2px;
 }
 
 /* =========================
-   Code blocks
-   ========================= */
-
-.md-typeset pre {
-    background: linear-gradient(180deg,
-            #0B0F1A,
-            #070B10);
-    border: 1px solid rgba(170, 182, 238, 0.12);
-    border-radius: 10px;
-}
-
-/* Inline code */
-.md-typeset code {
-    background: rgba(95, 125, 197, 0.12);
-    border-radius: 6px;
-    padding: 0.15em 0.35em;
-}
-
-/* =========================
-   Admonitions
+   6/13. Admonitions (как карточки)
    ========================= */
 
 .md-typeset .admonition,
 .md-typeset details {
-    border: 1px solid rgba(170, 182, 238, 0.15);
-    border-radius: 12px;
-    background:
-        linear-gradient(135deg,
-            rgba(95, 125, 197, 0.08),
-            rgba(191, 166, 255, 0.05));
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-left-width: 4px;
+    border-radius: var(--radius);
+    box-shadow: none;
+    color: var(--fg);
+}
+
+.md-typeset .admonition-title,
+.md-typeset details > summary {
+    background: var(--bg3);
+    color: var(--fg);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.md-typeset .admonition-title::before,
+.md-typeset details > summary::before {
+    background-color: currentColor;
+}
+
+/* tip / success → green */
+.md-typeset .admonition.tip,
+.md-typeset .admonition.success,
+.md-typeset details.tip,
+.md-typeset details.success {
+    border-color: var(--green);
+    border-bottom-color: var(--border);
+    border-right-color: var(--border);
+    border-top-color: var(--border);
+}
+
+.md-typeset .admonition.tip > .admonition-title,
+.md-typeset .admonition.success > .admonition-title,
+.md-typeset details.tip > summary,
+.md-typeset details.success > summary {
+    color: var(--green);
+    background: oklch(68.902% 0.23444 142.511 / .07);
+}
+
+/* note / info → accent2 */
+.md-typeset .admonition.note,
+.md-typeset .admonition.info,
+.md-typeset details.note,
+.md-typeset details.info {
+    border-color: var(--accent2);
+    border-bottom-color: var(--border);
+    border-right-color: var(--border);
+    border-top-color: var(--border);
+}
+
+.md-typeset .admonition.note > .admonition-title,
+.md-typeset .admonition.info > .admonition-title,
+.md-typeset details.note > summary,
+.md-typeset details.info > summary {
+    color: var(--accent2);
+}
+
+/* warning → orange */
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+    border-color: var(--orange);
+    border-bottom-color: var(--border);
+    border-right-color: var(--border);
+    border-top-color: var(--border);
+}
+
+.md-typeset .admonition.warning > .admonition-title,
+.md-typeset details.warning > summary {
+    color: var(--orange);
+}
+
+/* danger / error → error-триада */
+.md-typeset .admonition.danger,
+.md-typeset details.danger {
+    border-color: var(--error-border);
+    background: var(--error-bg);
+    border-bottom-color: var(--error-border);
+    border-right-color: var(--error-border);
+    border-top-color: var(--error-border);
+}
+
+.md-typeset .admonition.danger > .admonition-title,
+.md-typeset details.danger > summary {
+    color: var(--error-text);
+    background: transparent;
 }
 
 /* =========================
-   Tables
+   7. Таблицы
    ========================= */
 
 .md-typeset table {
-    border-radius: 12px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
     overflow: hidden;
+    font-size: 0.875rem;
 }
 
-.md-typeset th {
-    background: #1B1D30;
+.md-typeset table th {
+    background: var(--bg2);
+    color: var(--fg3);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+    border-bottom: 1px solid var(--border);
 }
 
-.md-typeset td {
-    background: #0F1120;
+.md-typeset table td {
+    border-top: 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--fg);
+}
+
+.md-typeset table tbody tr:hover {
+    background: var(--bg3);
+}
+
+.md-typeset table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+/* Скроллбар таблиц */
+.md-typeset table::-webkit-scrollbar-thumb {
+    background: var(--border2);
+}
+
+.md-typeset table::-webkit-scrollbar-thumb:hover {
+    background: var(--fg3);
 }
 
 /* =========================
-   Footer
+   Код
+   ========================= */
+
+.md-typeset pre {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.md-typeset pre > code {
+    background: var(--bg2);
+    color: var(--fg);
+    font-family: var(--font-mono);
+}
+
+/* Inline-код */
+.md-typeset code {
+    background: var(--bg3);
+    color: var(--fg);
+    font-family: var(--font-mono);
+    border-radius: calc(var(--radius) / 2);
+    padding: 0.15em 0.35em;
+}
+
+.md-typeset pre > code {
+    padding: 0;
+}
+
+/* =========================
+   Табы (content.tabs)
+   ========================= */
+
+.md-typeset .tabbed-labels {
+    border-bottom: 1px solid var(--border);
+}
+
+.md-typeset .tabbed-labels > label {
+    color: var(--fg2);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+}
+
+.md-typeset .tabbed-set > input:checked + label {
+    color: var(--accent);
+}
+
+/* =========================
+   8. Footer
    ========================= */
 
 .md-footer {
-    background: #070B10;
-    border-top: 1px solid rgba(170, 182, 238, 0.12);
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    margin-top: 3rem;
+}
+
+.md-footer-meta {
+    background: var(--bg);
+}
+
+.md-footer__link {
+    color: var(--fg2);
+}
+
+.md-footer__link:hover {
+    color: var(--fg);
+}
+
+/* =========================
+   Поиск
+   ========================= */
+
+.md-search__form {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.md-search__form:hover {
+    border-color: var(--border2);
+    background: var(--bg3);
+}
+
+.md-search__input::placeholder {
+    color: var(--fg3);
+}
+
+.md-search__input {
+    color: var(--fg);
+}
+
+.md-search__output {
+    background: var(--bg2);
+}
+
+.md-search-result__article--document {
+    background: transparent;
+}
+
+.md-search-result a:hover {
+    background: var(--bg3);
+}
+
+.md-search-result__meta {
+    color: var(--fg3);
+}
+
+/* =========================
+   Главный скроллбар
+   ========================= */
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border2);
+    border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--fg3);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+/* =========================
+   Переходы по умолчанию
+   ========================= */
+
+@media (prefers-reduced-motion: no-preference) {
+    .md-typeset h1,
+    .md-typeset h2,
+    .md-typeset h3,
+    .md-typeset table,
+    .md-footer,
+    .md-header {
+        transition: all 0.15s ease;
+    }
 }
